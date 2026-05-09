@@ -55,6 +55,7 @@ app.post('/gerar-pdf', async (req, res) => {
     console.log('[PDF] Iniciando Puppeteer...')
     browser = await puppeteer.launch({
       headless: true,
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
       args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
     })
 
