@@ -74,7 +74,7 @@ app.post('/gerar-pdf', async (req, res) => {
 
     console.log('[PDF] PDF gerado com sucesso, size:', pdfBytes.length)
     res.set('Content-Type', 'application/pdf')
-    res.send(pdfBytes)
+    res.send(Buffer.from(pdfBytes))
 
   } catch (err) {
     console.error('[PDF] Erro:', err)
